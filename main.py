@@ -47,7 +47,7 @@ def get_random_color():
 client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
-da, wea, temperature, highest, humidity, wind,  pm25, pm10, airQuality, lowest = get_weather()
+da, wea, temperature, highest, lowest, humidity, wind,  pm25, pm10, airQuality = get_weather()
 data = {"date":{"value":da,"color":get_random_color()},"weather":{"value":wea,"color":get_random_color()},"temperature":{"value":temperature,"color":get_random_color()},"love_days":{"value":get_count(),"color":get_random_color()},"birthday_left":{"value":get_birthday(),"color":get_random_color()},"words":{"value":get_words(),"color":get_random_color()},"highest": {"value":highest,"color":get_random_color()},"lowest":{"value":lowest, "color":get_random_color()},"humid":{"value":humidity,"color":get_random_color()},"winda":{"value":wind,"color":get_random_color()},"pm2":{"value":pm25,"color":get_random_color()},"pm1":{"value":pm10,"color":get_random_color()},"airQua":{"value":airQuality,"color":get_random_color()}}
 count = 0
 for user_id in user_ids:
